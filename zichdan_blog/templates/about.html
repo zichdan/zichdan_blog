@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+{% if current_user.is_authenticated %}
+<h2>Hello, {{ current_user.username }}! <span class="wave">👋🏾</span></h2>
+{% else %}
+<h2>Hello and Welcome! <span class="wave">👋🏾</span></h2>
+{% endif %}
+<p>
+  zichdan_blog is a safe space to explore the thoughts and experiences of fellow
+  citizens of the internet, and share yours too.
+</p>
+<p>
+  Authentication is not required to read articles on this blog, but you'll have
+  to <a href="{{url_for('login')}}">log in</a> to post, edit or delete your
+  articles.
+</p>
+<br />
+ <div>
+  <a href="{{url_for('contact')}}"></a>
+ </div>
+<br />
+…
